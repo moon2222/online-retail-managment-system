@@ -1,0 +1,95 @@
+*************online retail management system*********
+ 
+               pseudo code
+pseudo code for  retail manager
+
+1. Give Order  
+2. There is only for option Manage
+   A. Manage your store
+   B. Manage customer Account
+   C. Manage finance 
+   D. manage supplier
+3. sell items
+
+A. MANAGE  STORE
+  if retailer wants to arrange
+{
+     then it shows option 
+           {
+      switch()
+
+             case 1:
+		by price;
+		sort by price;	
+             case 2:
+		by item Name;
+		sort by item Name;
+             case 3:
+		by brand;
+		sort by brand;
+             }
+}
+B.Manage customer acoount
+    if retailer wants to change something then login
+{
+         then show to fields
+		1.username;
+		2.password;
+         (WE TAKE USERNAME & PASSWORD AS VARIABLE)
+
+	if it matches with database of retailer table
+          
+		matches=1;
+          else
+		matches=0;
+	if(matches==1)
+		{
+		 fill all the atribute of customer;
+			1. Customer name
+			2. customer ID
+			3. customer address
+			4. contact no.
+			5. credit balance 
+			6. credit limit
+		}
+	else
+		{
+		show login page;
+		printf("error due incorrect password or username ");
+                link for forget password;
+		}
+}
+B.Manage supplier acoount
+
+
+    if retailer wants to change something  in supplier account then login
+{
+         then show to fields
+		1.username;
+		2.password;
+         (WE TAKE USERNAME & PASSWORD AS VARIABLE)
+
+	if it matches with database of retailer table
+          
+		matches=1;
+          else
+		matches=0;
+	if(matches==1)
+		{
+		 fill all the atribute of customer;
+			1. supplier name
+			2. supplier ID
+			3. supplier address
+			4. contact no.
+			5. balance which is not paid 
+			
+		}
+	else
+		{
+		show login page;
+		printf("error due incorrect password or username ");
+                link for forget password;
+		}
+}
+ 
+ 
