@@ -1,0 +1,51 @@
+*************online retail management system*********
+ 
+               pseudo code
+pseudo code for  retailer login 
+1. There is only two option 
+   A. login
+   B. new Account
+ 
+
+B. NEW ACCOUNT
+  if retailer wants to make new account(click on new account)
+{
+     then it shows form for registration
+           {
+             1. User_name;
+             2.retailer Name;
+             3.Address;
+	     4.contact No;
+	     5.email.id;
+    	     6.password;
+	     7.conform password(should be same as password)JAVA SCRIPT
+             .....
+             .....
+             }
+}
+A.LOGIN
+    if retailer wants to login 
+{
+         then show to fields
+		1.username;
+		2.password;
+         (WE TAKE USERNAME & PASSWORD AS VARIABLE)
+
+	if it matches with database of retailer table
+          
+		matches=1;
+          else
+		matches=0;
+	if(matches==1)
+		{
+		 show profile of his/her ;
+		}
+	else
+		{
+		show login page;
+		printf("error due incorrect password or username ");
+                link for forget password;
+		}
+}
+ 
+ 
