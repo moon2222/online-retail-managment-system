@@ -59,7 +59,39 @@ B.Manage customer acoount
                 link for forget password;
 		}
 }
-B.Manage supplier acoount
+C. MANAGEMENT OF FINANCE
+
+//if any transaction if take place offline then retailer can manage finance //
+ if retailer wants to change something then login
+{
+         then show to fields
+		1.username;
+		2.password;
+         (WE TAKE USERNAME & PASSWORD AS VARIABLE)
+
+	if it matches with database of retailer table
+          
+		matches=1;
+          else
+		matches=0;
+	if(matches==1)
+		{
+		 it can change credit debit account 
+			if (pay money to the supplier)
+			   he can upadate credit list of retailer
+			if (if customer pay money to the retailer)
+			   he can upadate credit list of customer  
+       
+		}
+	else
+		{
+		show login page;
+		printf("error due incorrect password or username ");
+                link for forget password;
+		}
+
+
+D.Manage supplier acoount
 
 
     if retailer wants to change something  in supplier account then login
