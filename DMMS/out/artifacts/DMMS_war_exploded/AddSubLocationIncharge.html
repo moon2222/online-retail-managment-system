@@ -1,0 +1,47 @@
+<html>
+<head>
+<script language="JavaScript" type="text/javascript">
+function check()
+{
+
+var h=document.f1.MaxnoOfRetailers.value;
+
+if(isNaN(h))
+ {
+ alert("should be a number") ;
+ document.f1.MaxnoOfRetailers.value="";
+ document.f1.MaxnoOfRetailers.focus();
+ }
+}
+ 
+</script>
+</head>
+<body bgcolor="#CC99FF" >
+<center><h1>SubIncharge details </h1></center>
+<form name="f1" action="./SubLocationController" method="post">
+
+<center>
+<table>
+
+<tr><td align=right>Password           :</td><td><input type="Password" name =password></td></tr>
+<tr><td align= right>Name              : </td><td><input type="text" name =Name ></td></tr>
+<tr><td align=right>House no           :</td><td><input type="text" name =House  ></td></tr>
+<tr><td align= right>Street            :</td><td><input type="text" name =Street ></td></tr>
+<tr><td align= right>City              :</td><td><input type="text" name =City ></td></tr>
+<tr><td align=right>Phone              :</td><td><input type="text" name =Phone ></td></tr>
+<tr><td align=right>E-mail             :</td><td><input type="text" name =Email ></td></tr>
+<tr><td align= right>state             : </td><td><input type="text" name =State ></td></tr>
+<tr><td align= right>Location          : </td><td><input type="text" name =Location ></td></tr>
+<tr><td align= right>MaxNo Of Retailers: </td><td><input type="text" name ="MaxnoOfRetailers" onBlur="check()" ></td></tr>
+<tr><td align= right>Country           :</td><td><input type="text" name =Country ></td></tr>
+
+</table><br><br>
+
+<input type="submit" name ="submit"  value="AddSubIncharge">
+
+</center>
+</form>
+
+</body>
+</html>
+

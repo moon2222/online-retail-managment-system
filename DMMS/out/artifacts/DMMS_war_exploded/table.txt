@@ -1,0 +1,196 @@
+drop table sublocationincharge;
+create table sublocationincharge(
+SUBINCHARGEID NUMBER(5) PRIMARY KEY,
+PASSWORD VARCHAR2(10),
+NAME VARCHAR2(20),
+HOUSENO VARCHAR2(10),
+STREET VARCHAR2(10),
+ITY VARCHAR2(10),
+PHONE NUMBER(15),
+EMAIL VARCHAR2(10),
+STATE VARCHAR2(10),
+LOCATIONNAME VARCHAR2(10),
+MAXNOOFRETAILERS VARCHAR2(10),
+COUNTRY VARCHAR2(10));
+
+
+drop table supplier;
+create table supplier(
+SUPPLIERID NUMBER(5),
+NAME VARCHAR(50),
+PHONE NUMBER(20),
+EMAIL VARCHAR(30),
+HOUSE VARCHAR(20),
+STREET VARCHAR(20),
+CITY VARCHAR(20),
+COUNTRY VARCHAR(20));
+
+
+drop table ITEM;
+create table ITEM(
+ITEMID NUMBER(5),
+ITEMNAME VARCHAR2(20),
+UNITCOST NUMBER(5,2));
+
+
+drop table retailer;
+create table retailer(
+RETAILERID number(5) PRIMARY KEY,
+password varchar2(10),
+name varchar2(20),
+houseno varchar2(10),
+street varchar2(20),
+city varchar2(15),
+state varchar2(15),
+country varchar2(15),
+phone varchar2(15),
+email varchar2(20));
+
+
+drop table warehousepayment;
+create table warehousepayment(
+WPOID number,
+PAYDATE varchar2(10),
+SUPPLIERID number,
+CHEQUENO varchar2(10));
+
+
+drop table warehousepurchaseorder;
+create table warehousepurchaseorder(
+WPOID number PRIMARY KEY,
+ITEMID number,
+QTY number);
+
+
+drop table sublocationstock;
+create table sublocationstock(ITEMID number,qty number);
+
+
+drop table slpurchaseorder;
+create table slpurchaseorder(
+SUBPOID number,
+itemid number,
+qty number);
+
+
+drop table adminlogin;
+create table adminlogin(
+username varchar2(20),
+password varchar2(10));
+insert into adminlogin values('whms','whms');
+
+
+drop table subloclogin;
+create table subloclogin(
+username varchar2(20),
+password varchar2(10));
+
+
+drop table warehousesalesorder;
+create table warehousesalesorder(
+SLPOID number,
+WAREHOUSESALESDATE varchar2(10),
+SHIPMENTDES varchar2(10),
+FLAG NUMBER);
+
+
+drop table warehousesalesorder;
+create table warehousesalesorder(
+SLPOID number,
+warehousesaledate varchar2(20),
+shipmentdes varchar2(20),
+itemid number,
+qty number);
+
+
+drop table warehousestock;
+create table warehousestock(
+itemid number,
+itemname varchar2(30),
+qty number);
+
+
+drop table slpayment;
+create table slpayment(
+SUBPOID number,
+PODATE varchar2(20),
+CHENO varchar2(10));
+
+
+drop table retailerpurchaseorder;
+CREATE TABLE retailerpurchaseorder(
+RETAILERID NUMBER,
+RPOID NUMBER,
+itemno NUMBER,
+QTY NUMBER);
+
+
+drop table retailerpayment;
+CREATE TABLE retailerpayment(
+RPOID NUMBER,
+retailerid NUMBER,
+podate VARCHAR2(15),
+cheno VARCHAR2(10));
+
+drop table retstock;
+create table retstock(
+retailerid number,
+itemno number,
+qty number);
+
+
+drop table slsalesorder;
+create table slsalesorder(
+rpoid number,
+sliid number,
+slpaydate varchar2(20),
+cheno number,
+itemno number,
+qty number);
+
+
+
+create table custdet2(
+custcode number(10) primary key,
+custname varchar2(20),
+address1 varchar2(30),
+address2 varchar2(30),
+city varchar2(20),
+district varchar2(20),
+telno number(15));
+
+
+create table machdet2(
+machslno number(10) primary key,
+machloc varchar2(20),
+custcode number(10),
+refno number(10),
+instaldate varchar2(20),
+status varchar2(20),
+expdate varchar2(20),
+modelid varchar2(20),
+sitecond varchar2(20),
+countread varchar2(20),
+stab varchar2(20),
+amcv varchar2(20),
+foreign key(custcode) references custdet2(custcode));
+
+
+create table servdet2(
+custid number(10),
+machid number(10),
+engid varchar2(30),
+servdate  varchar2(30),
+status varchar2(20));
+
+
+create table probdet2(
+probid number(10) primary key,
+status varchar2(20),
+probcat varchar2(200),
+probdesc varchar2(230),
+prod varchar2(20),
+custcode number(20),
+machid number(10));
+
+

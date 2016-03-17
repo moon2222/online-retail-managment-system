@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - dmms@localhost" uuid="3c9c1197-fa51-4dc3-970f-bff033b2b8c7">
+    <database-info product="MySQL" version="5.5.48" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.37 ( Revision: 09940f05b4c98150f352e787a2549f11a2e9da93 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="dmms"/>
+    <table name="adminlogin" schema="" catalog="dmms" type="TABLE">
+      <column name="username" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="custdet2" schema="" catalog="dmms" type="TABLE">
+      <column name="custcode" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="custname" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address1" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address2" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="district" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="telno" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="custcode"/>
+      <exported-key name="machdet2_ibfk_1" table="machdet2" schema="" catalog="dmms" columns="custcode"/>
+    </table>
+    <table name="custdetail" schema="" catalog="dmms" type="TABLE">
+      <column name="ccode" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cname" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address" sqlType="VARCHAR" precision="40" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address1" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="district" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phoneno" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="item" schema="" catalog="dmms" type="TABLE">
+      <column name="ITEMID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ITEMNAME" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="UNITCOST" sqlType="FLOAT" precision="5" scale="2" nullable="true" jdbcType="7"/>
+    </table>
+    <table name="machdet2" schema="" catalog="dmms" type="TABLE">
+      <column name="machslno" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="machloc" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="custcode" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="refno" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="instaldate" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="expdate" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="modelid" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sitecond" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="countread" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="stab" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="amcv" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="machslno"/>
+      <foreign-key name="machdet2_ibfk_1" columns="custcode" ref-table="custdet2" ref-schema="" ref-catalog="dmms" ref-columns="custcode" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="machinedetail" schema="" catalog="dmms" type="TABLE">
+      <column name="machine_s_no" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="machine_loc" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ccode" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ref_no" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="istallatoin_data" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="expriry_data" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="model_id" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sitecondition" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="c_reading" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="stabiliezer" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="AMCV" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="probdet2" schema="" catalog="dmms" type="TABLE">
+      <column name="probid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="status" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="probcat" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="probdesc" sqlType="VARCHAR" precision="230" scale="0" nullable="true" jdbcType="12"/>
+      <column name="prod" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="custcode" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="machid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="probid"/>
+    </table>
+    <table name="problemdetail" schema="" catalog="dmms" type="TABLE">
+      <column name="probid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="status" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="probcat" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="probdesc" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="product" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CustCode" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="machineno" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="retailer" schema="" catalog="dmms" type="TABLE">
+      <column name="RETAILERID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="password" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="houseno" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="street" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR" precision="15" scale="0" nullable="true" jdbcType="12"/>
+      <column name="state" sqlType="VARCHAR" precision="15" scale="0" nullable="true" jdbcType="12"/>
+      <column name="country" sqlType="VARCHAR" precision="15" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR" precision="15" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="RETAILERID"/>
+    </table>
+    <table name="retailerpayment" schema="" catalog="dmms" type="TABLE">
+      <column name="RPOID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="retailerid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="podate" sqlType="VARCHAR" precision="15" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cheno" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="retailerpurchaseorder" schema="" catalog="dmms" type="TABLE">
+      <column name="RETAILERID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="RPOID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="itemno" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="QTY" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="retstock" schema="" catalog="dmms" type="TABLE">
+      <column name="retailerid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="itemno" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="qty" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="servdet2" schema="" catalog="dmms" type="TABLE">
+      <column name="custid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="machid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="engid" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="servdate" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="slpayment" schema="" catalog="dmms" type="TABLE">
+      <column name="SUBPOID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="PODATE" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CHENO" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="slpurchaseorder" schema="" catalog="dmms" type="TABLE">
+      <column name="SUBPOID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="itemid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="qty" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="slsalesorder" schema="" catalog="dmms" type="TABLE">
+      <column name="rpoid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="sliid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="slpaydate" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cheno" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="itemno" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="qty" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="sublocationincharge" schema="" catalog="dmms" type="TABLE">
+      <column name="SUBINCHARGEID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="PASSWORD" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="HOUSENO" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="STREET" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ITY" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PHONE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="EMAIL" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="STATE" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="LOCATIONNAME" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="MAXNOOFRETAILERS" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="COUNTRY" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="SUBINCHARGEID"/>
+    </table>
+    <table name="sublocationstock" schema="" catalog="dmms" type="TABLE">
+      <column name="ITEMID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="qty" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="subloclogin" schema="" catalog="dmms" type="TABLE">
+      <column name="username" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="supplier" schema="" catalog="dmms" type="TABLE">
+      <column name="SUPPLIERID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NAME" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PHONE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="EMAIL" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="HOUSE" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="STREET" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CITY" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="COUNTRY" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="warehousepayment" schema="" catalog="dmms" type="TABLE">
+      <column name="WPOID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="PAYDATE" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="SUPPLIERID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="CHEQUENO" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="warehousepurchaseorder" schema="" catalog="dmms" type="TABLE">
+      <column name="WPOID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ITEMID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="QTY" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="WPOID"/>
+    </table>
+    <table name="warehousesalesorder" schema="" catalog="dmms" type="TABLE">
+      <column name="SLPOID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="warehousesaledate" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="shipmentdes" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="itemid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="qty" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="warehousestock" schema="" catalog="dmms" type="TABLE">
+      <column name="itemid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="itemname" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="qty" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
+  </data-source>
+</component>
