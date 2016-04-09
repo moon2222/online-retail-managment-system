@@ -1,0 +1,92 @@
+
+CREATE  USER  DMMS IDENTIFIED BY DMMS;
+ 
+
+  GRANT CONNECT, RESOURCE TO DMMS;
+
+ CONNECT DMMS/DMMS;
+
+
+
+
+create table sublocationincharge(SUBINCHARGEID NUMBER PRIMARY KEY,PASSWORD VARCHAR2(20),NAME VARCHAR2(20),HOUSENO VARCHAR2(20),STREET VARCHAR2(20),ITY VARCHAR2(20),PHONE NUMBER,EMAIL VARCHAR2(20),STATE VARCHAR2(20),LOCATIONNAME VARCHAR2(20),MAXNOOFRETAILERS VARCHAR2(20),COUNTRY VARCHAR2(20));
+
+create table supplier(SUPPLIERID NUMBER(20),NAME VARCHAR(50),PHONE NUMBER(20),EMAIL VARCHAR(30),HOUSE VARCHAR(20),STREET VARCHAR(20),CITY VARCHAR(20),COUNTRY VARCHAR(20));
+
+
+create table ITEM(ITEMID NUMBER,ITEMNAME VARCHAR2(20),UNITCOST NUMBER(10,5));
+
+
+create table retailer(RETAILERID number PRIMARY KEY,
+password varchar2(20),
+name varchar2(20),
+  houseno varchar2(20),
+street varchar2(20),
+city varchar2(20),
+state varchar2(20),
+country varchar2(20),
+phone varchar2(20),
+email varchar2(20));
+
+create table warehousepayment(WPOID number,PAYDATE varchar2(20),SUPPLIERID number,CHEQUENO varchar2(20));
+
+
+create table warehousepurchaseorder(WPOID number(3) PRIMARY KEY,ITEMID number(3),QTY number(6));
+
+create table sublocationstock(ITEMID number(5),qty number(5));
+
+
+create table slpurchaseorder(SUBPOID number(5),itemid number(5),qty number(6));
+
+create table adminlogin(username varchar2(20),password varchar2(20));
+
+
+create table subloclogin(username varchar2(20),password varchar2(20));
+
+
+create table warehousesalesorder(SLPOID number,WAREHOUSESALESDATE varcahr2(20),SHIPMENTDES varchar2(20),FLAG NUMBER)
+
+create table warehousesalesorder(SLPOID number,warehousesaledate varchar2(20),shipmentdes varchar2(20),itemid number,qty number)
+
+
+create table warehousestock(itemid number,qty number);
+
+
+create table slpayment(SUBPOID number,PODATE varchar2(20),CHENO varchar2(20));
+
+
+CREATE TABLE retailerpurchaseorder(RETAILERID NUMBER,RPOID NUMBER,itemno NUMBER,QTY NUMBER);
+
+
+CREATE TABLE retailerpayment(RPOID NUMBER(3),retailerid NUMBER(3),podate VARCHAR2(20),cheno VARCHAR2(20));
+
+create table retstock(retailerid number(3),itemno number(3),qty number(6));
+
+
+create table slsalesorder(rpoid number(3),sliid number(3),slpaydate varchar2(20),cheno number(7),itemno number(7),qty number(7));
+
+create table  custdetail(ccode varchar2(20),cname varchar2(25), address varchar2(40),address1 varchar2(30),city varchar2(25), district varchar2(20), phoneno number(25));
+
+  create table machinedetail(machine_s_no varchar2(25),
+   machine_loc varchar2(25),
+   ccode  number(25),
+   ref_no varchar2(25),
+   istallatoin_data varchar2(25),
+   status varchar2(25),
+    expriry_data varchar2(25),
+   model_id varchar2(25),
+   sitecondition varchar2(25),
+   c_reading varchar2(25),
+   stabiliezer varchar2(25),
+   AMCV varchar2(25));  
+
+
+ create table problemdetail(probid number(25),
+                           status  varchar2(25),
+                           probcat varchar2(20),
+		           probdesc varchar2(20),
+                           product  varchar2(20),
+                           CustCode  number(25),
+                           machineno number(25));  
+
+create table    warehousepayment(wpoid number(25),paydate varchar2(25),supplierid varchar2(25), chequeno varchar2(25));
