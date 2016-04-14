@@ -1,0 +1,81 @@
+create table sublocationincharge(SUBINCHARGEID int PRIMARY KEY,PASSWORD varchar(20),NAME varchar(20),HOUSENO varchar(20),STREET varchar(20),ITY varchar(20),PHONE int,EMAIL varchar(20),STATE varchar(20),LOCATIONNAME varchar(20),MAXNOOFRETAILERS varchar(20),COUNTRY varchar(20));
+
+create table supplier(SUPPLIERID int(20),NAME VARCHAR(50),PHONE int(20),EMAIL VARCHAR(30),HOUSE VARCHAR(20),STREET VARCHAR(20),CITY VARCHAR(20),COUNTRY VARCHAR(20));
+
+
+create table ITEM(ITEMID int,ITEMNAME varchar(20),UNITCOST float(10,5));
+
+
+create table retailer(RETAILERID int PRIMARY KEY,
+password varchar(20),
+name varchar(20),
+  houseno varchar(20),
+street varchar(20),
+city varchar(20),
+state varchar(20),
+country varchar(20),
+phone varchar(20),
+email varchar(20));
+
+create table warehousepayment(WPOID int,PAYDATE varchar(20),SUPPLIERID int,CHEQUENO varchar(20));
+
+
+create table warehousepurchaseorder(WPOID int(3) PRIMARY KEY,ITEMID int(3),QTY int(6));
+
+create table sublocationstock(ITEMID int(5),qty int(5));
+
+
+create table slpurchaseorder(SUBPOID int(5),itemid int(5),qty int(6));
+
+create table adminlogin(username varchar(20),password varchar(20));
+
+
+create table subloclogin(username varchar(20),password varchar(20));
+
+
+create table warehousesalesorder(SLPOID int,WAREHOUSESALESDATE varcahr2(20),SHIPMENTDES varchar(20),FLAG int);
+
+create table warehousesalesorder(SLPOID int,warehousesaledate varchar(20),shipmentdes varchar(20),itemid int,qty int);         
+
+
+create table warehousestock(itemid int,qty int);
+
+
+create table slpayment(SUBPOID int,PODATE varchar(20),CHENO varchar(20));
+
+
+CREATE TABLE retailerpurchaseorder(RETAILERID int,RPOID int,itemno int,QTY int);
+
+
+CREATE TABLE retailerpayment(RPOID int(3),retailerid int(3),podate varchar(20),cheno varchar(20));
+
+create table retstock(retailerid int(3),itemno int(3),qty int(6));
+
+
+create table slsalesorder(rpoid int(3),sliid int(3),slpaydate varchar(20),cheno int(7),itemno int(7),qty int(7));
+
+create table  custdetail(ccode varchar(20),cname varchar(25), address varchar(40),address1 varchar(30),city varchar(25), district varchar(20), phoneno int(25));
+
+  create table machinedetail(machine_s_no varchar(25),
+   machine_loc varchar(25),
+   ccode  int(25),
+   ref_no varchar(25),
+   istallatoin_data varchar(25),
+   status varchar(25),
+    expriry_data varchar(25),
+   model_id varchar(25),
+   sitecondition varchar(25),
+   c_reading varchar(25),
+   stabiliezer varchar(25),
+   AMCV varchar(25));  
+
+
+ create table problemdetail(probid int(25),
+                           status  varchar(25),
+                           probcat varchar(20),
+		           probdesc varchar(20),
+                           product  varchar(20),
+                           CustCode  int(25),
+                           machineno int(25));  
+
+create table    warehousepayment(wpoid int(25),paydate varchar(25),supplierid varchar(25), chequeno varchar(25));
